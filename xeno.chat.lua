@@ -1,0 +1,26 @@
+﻿local TextChatService = game:GetService("TextChatService")
+local library = loadstring(game.HttpGet(game, "https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/0x"))()
+local window = library:Window("Chat stuff")
+
+local function chatMessage(str)
+    str = tostring(str)
+    if TextChatService.ChatVersion == Enum.ChatVersion.TextChatService then
+        TextChatService.TextChannels.RBXGeneral:SendAsync(str)
+    else
+        ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(str, "All")
+    end
+end
+local blob2 = "\u{001E}" --invisible character
+local blob = "\u{000D}" --newline
+window:Button("ROBLOX Join", function()
+    chatMessage(blob2..string.rep(blob, 80).."[Server]: Roblox has joined the game.")
+end)
+window:Button("Server chat clear", function()
+    chatMessage(blob2..string.rep(blob, 100).. "[Server]: Chat cleared.")
+end)
+window:Button("Swastika", function()
+    chatMessage(blob2..string.rep(blob, 40).. "⬜⬜⬜⬜⬜⬜⬜"..blob.."⬜⬛⬜⬛⬛⬛⬜"..blob.."⬜⬛⬜⬛⬜⬜⬜"..blob.."⬜⬛⬛⬛⬛⬛⬜"..blob.."⬜⬜⬜⬛⬜⬛⬜"..blob.."⬜⬛⬛⬛⬜⬛⬜"..blob.."⬜⬜⬜⬜⬜⬜⬜")
+end)
+window:Button("Penis", function()
+    chatMessage(blob2.. "⬜⬜⬜⬜⬜⬜⬜⬜"..blob.."⬜⬜⬜⬛⬛⬜⬜⬜"..blob.."⬜⬜⬜⬛⬛⬜⬜⬜"..blob.."⬜⬜⬜⬛⬛⬜⬜⬜"..blob.."⬜⬜⬜⬛⬛⬜⬜⬜"..blob.."⬜⬛⬛⬛⬛⬛⬛⬜"..blob.."⬜⬛⬛⬜⬜⬛⬛⬜"..blob.."⬜⬜⬜⬜⬜⬜⬜⬜")
+end)
